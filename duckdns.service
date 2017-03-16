@@ -3,4 +3,4 @@ Description=DuckDNS update job
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/duckdns
+ExecStart=/usr/local/bin/duckdns
