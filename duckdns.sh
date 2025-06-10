@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 logger -t DuckDNS "Updating DuckDNS entries"
 EXITCODE=0
-for file in /etc/duckdns.d/*.cfg
+for file in /etc/duckdns.d/*.conf
 do
 	source "${file}"
 	logger -t DuckDNS "Executing config file '${file}'"
