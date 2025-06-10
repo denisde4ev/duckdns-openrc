@@ -14,23 +14,23 @@ Execute these comments
 
 Clone/download this repo on your computer
 
-    mv duckdns.sh /usr/bin/duckdns
-    chmod +x /usr/bin/duckdns
-    mv duckdns.service /usr/lib/systemd/system/
-    mv duckdns.timer /usr/lib/systemd/system/
+	mv duckdns.sh /usr/bin/duckdns
+	chmod +x /usr/bin/duckdns
+	mv duckdns.service /usr/lib/systemd/system/
+	mv duckdns.timer /usr/lib/systemd/system/
 
-    mkdir -p /etc/duckdns.d
-    mv default.cfg /etc/duckdns.d/
+	mkdir -p /etc/duckdns.d
+	mv default.cfg /etc/duckdns.d/
 
-    systemctl enable duckdns.timer
-    systemctl start duckdns.timer
+	systemctl enable duckdns.timer
+	systemctl start duckdns.timer
 
 ### Configuration
 
 the **default.cfg** file shows perfectly what options you must enter, you can create new files if you have multiple domains with the same setup.
 
-    duckdns_hostname=
-    duckdns_token=
+	duckdns_hostname=
+	duckdns_token=
 
 Nothing more is needed.
 
