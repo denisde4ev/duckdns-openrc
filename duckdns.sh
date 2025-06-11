@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 EXITCODE=0
-for file in /etc/duckdns.d/*.conf
 
 echo 'Updating DuckDNS entries... '
 
-for file in /etc/duckdns.d/*.cfg
+for file in /etc/duckdns.d/*.conf
 do
 	source "${file}"
 	echo -n "Executing config file '${file}': "

@@ -26,18 +26,18 @@ DuckDNS is a free service which will point a DNS (sub domains of duckdns.org)
 to an IP of your choice
 
 When you run ``duckdns`` without options it will read the default
-configuration files in ``/etc/duckdns.d/*.cfg`` and then it will update
+configuration files in ``/etc/duckdns.d/*.conf`` and then it will update
 the ip's associated.
 
-You must add a cfg file for every domain registered in duckdns.org. For example:
+You must add a conf file for every domain registered in duckdns.org. For example:
 
 ::
 
-        $ cat /etc/duckdns.d/example.cfg
+        $ cat /etc/duckdns.d/example.conf
         duckdns_hostname=example
         duckdns_token=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 
-Every configuration file in ``/etc/duckdns.d/`` must end in ``.cfg``.
+Every configuration file in ``/etc/duckdns.d/`` must end in ``.conf``.
 
 
 SYSTEMD
@@ -65,7 +65,7 @@ FILES
 **/usr/lib/systemd/system/duckdns.timer**
     The systemd timer.
 
-**/etc/duckdns.d/default.cfg**
+**/etc/duckdns.d/default.conf**
    Example configuration file with empty fields. Edit at convenience or remove
    it.
 

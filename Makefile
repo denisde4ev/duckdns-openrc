@@ -12,7 +12,7 @@ $(EXECUTABLE_NAME).1.gz: README.rst
 install:
 	install -m 755 -D $(EXECUTABLE_NAME).sh $(DESTDIR)$(PREFIX)/bin/$(EXECUTABLE_NAME)
 	install -m 755 -d $(DESTDIR)/etc/$(EXECUTABLE_NAME).d
-	install -m 644 -D default.cfg $(DESTDIR)/etc/$(EXECUTABLE_NAME).d/default.cfg
+	install -m 644 -D default.conf $(DESTDIR)/etc/$(EXECUTABLE_NAME).d/default.conf
 	install -m 644 -D $(EXECUTABLE_NAME).1.gz $(DESTDIR)$(PREFIX)/share/man/man1/$(EXECUTABLE_NAME).1.gz
 
 
@@ -27,7 +27,7 @@ arch_install_services:
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(EXECUTABLE_NAME)
-	rm -f /etc/$(EXECUTABLE_NAME).d/default.cfg
+	rm -f /etc/$(EXECUTABLE_NAME).d/default.conf
 	rm -f /lib/systemd/system/$(EXECUTABLE_NAME).service
 	rm -f /lib/systemd/system/$(EXECUTABLE_NAME).timer
 

@@ -6,10 +6,10 @@ pkgdesc="Update your DuckDNS.org entries from your computer."
 arch=('any')
 install=${pkgname}.install
 url="https://github.com/mdomlop/duckdns"
-backup=("etc/duckdns.d/default.cfg")
+backup=("etc/duckdns.d/default.conf")
 makedepends=('python-docutils')
 
-source=('default.cfg' 'duckdns.service' 'duckdns.sh' 'duckdns.timer' 'README.rst')
+source=('default.conf' 'duckdns.service' 'duckdns.sh' 'duckdns.timer' 'README.rst')
 
 prepare() {
     cd $startdir
