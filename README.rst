@@ -6,10 +6,10 @@
 A DuckDNS ip updater program
 ---------------------------------------------
 
-:Author: Manuel Domínguez López <mdomlop@gmail.com>
-:Date:   2019-05-08
+:Author: <<??>>
+:Date:   <<??>>
 :Copyright: GPLv3
-:Version: 1.1
+:Version: <<??>>
 :Manual section: 1
 :Manual group: network tools
 
