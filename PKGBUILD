@@ -14,7 +14,10 @@ arch=('any')
 url="https://github.com/mdomlop/duckdns"
 backup=("etc/duckdns.d/default.conf")
 makedepends=('python-docutils')
-depends=()
+depends=(curl)
+conflicts=(duckdns)
+provides=(duckdns)
+# group=(duckdns)
 install="services/$_init_system/duckdns.install"
 
 source=('default.conf' 'duckdns.sh' 'README.rst')
