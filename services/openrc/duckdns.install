@@ -1,0 +1,16 @@
+post_install() {
+	echo "Setting up OpenRC service..."
+	echo >&2 WOULD EXECUTE: rc-update add duckdns default
+	echo >&2 WOULD EXECUTE: rc-service duckdns start
+}
+
+post_upgrade() {
+	echo "Restarting OpenRC service..."
+	echo >&2 WOULD EXECUTE: rc-service duckdns restart
+}
+
+pre_remove() {
+	echo "Stopping and removing duckdns OpenRC service..."
+	echo >&2 WOULD EXECUTE: rc-service duckdns stop
+	echo >&2 WOULD EXECUTE: rc-update del duckdns default
+}
