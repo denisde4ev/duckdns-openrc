@@ -57,7 +57,7 @@ package() {
 			install -Dm644 "${startdir}/services/$_init_system/duckdns.timer"   "${pkgdir}/usr/lib/systemd/system/duckdns.timer"
 		;;
 		openrc)
-			install -Dm755 "${startdir}/services/$_init_system/duckdns.init"    "${pkgdir}/etc/init.d/duckdns.init"
+			install -Dm755 "${startdir}/services/$_init_system/duckdns.init"    "${pkgdir}/etc/init.d/duckdns"
 			install -Dm755 "${startdir}/services/$_init_system/duckdns.conf"    "${pkgdir}/etc/init.d/duckdns.conf"
 		;;
 	esac
