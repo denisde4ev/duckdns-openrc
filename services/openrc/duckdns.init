@@ -1,0 +1,52 @@
+#!/sbin/openrc-run
+#!/hint/sh
+
+# Description: OpenRC service to update DuckDNS every 15 minutes.
+
+_name=duckdns
+name="DuckDNS update job" # ai
+#description="DuckDNS update job"
+
+[ ! -f /etc/conf.d/"${_name}" ] || . /etc/conf.d/"${_name}"
+
+
+command="${DUCKDNS_PREFIX-/usr}/bin/duckdns"
+#command_args="${DUCKDNS_OPTS}"
+
+#pidfile="/run/${RC_SVCNAME}.pid"
+pidfile="/run/${_name}.pid"
+#command_user="root"
+#command_background="yes"
+
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting DuckDNS updater"
+	while :; do
+		# note: env var "$DUCKDNS_CONFIGDIR"
+		"${command}" ${DUCKDNS_OPTS}
+		sleep 900  # 900 seconds = 15 minutes
+	done &
+	eend $?
+}
+
+
+
+
+#start_pre() {
+#	# locate your binary based on DUCKDNS_PREFIX
+#	if [ ! -x "${DUCKDNS_PREFIX}" ]; then
+#		eerror "duckdns binary not found at ${DUCKDNS_PREFIX}"
+#		return 1
+#	fi
+#}
+
+# start() {
+#	 ebegin "Running DuckDNS once"
+#	 # use $DUCKDNS_PREFIX as the path, and allow extra opts
+#	 "${DUCKDNS_PREFIX}" ${DUCKDNS_OPTS}
+#	 eend $?
+# }

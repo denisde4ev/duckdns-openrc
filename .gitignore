@@ -1,0 +1,25 @@
+# Ignore temporary files
+*.old
+*.bak
+*.swp
+*~
+
+# makepkg:
+## Ignore built package files
+*.pkg.tar.zst
+*.src.tar.gz
+*.tar.xz
+
+
+## Ignore makepkg-generated directories
+src/
+pkg/
+
+# ## Ignore pacman's local database files
+# /var/lib/pacman/local/
+# 
+# ## Ignore logs
+# /var/log/pacman.log
+# 
+# ## Ignore cached packages (optional)
+# /var/cache/pacman/pkg/

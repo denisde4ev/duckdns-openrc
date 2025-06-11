@@ -1,0 +1,10 @@
+
+ai: ## (OpenRC doesn’t have timers; use cron under /etc/cron.d/)
+
+
+# /etc/cron.d/duckdns
+SHELL=/bin/sh
+PATH=/usr/bin:/usr/sbin
+
+@reboot root /usr/bin/duckdns
+*/5 * * * * root /usr/bin/duckdns

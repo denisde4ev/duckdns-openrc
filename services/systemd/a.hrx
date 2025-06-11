@@ -1,0 +1,41 @@
+<===> duckdns.install
+post_install() {
+	echo "Reloading systemd daemons..."
+	systemctl daemon-reload
+	systemctl condrestart duckdns
+}
+
+post_upgrade() {
+	echo "Reloading systemd daemons..."
+	systemctl daemon-reload
+	systemctl condrestart duckdns
+}
+
+pre_remove() {
+	echo "Stopping duckdns systemd service..."
+	systemctl stop duckdns
+	echo "Disabling duckdns service..."
+	systemctl disable duckdns
+}
+<===> duckdns.service
+[Unit]
+Description=DuckDNS update job
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/duckdns
+<===> duckdns.timer
+[Unit]
+Description=Run DuckDNS every 15 minutes
+
+[Timer]
+OnBootSec=1
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target
+
+
+
+<===> init

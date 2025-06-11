@@ -34,7 +34,7 @@ You must add a conf file for every domain registered in duckdns.org. For example
 ::
 
         $ cat /etc/duckdns.d/example.conf
-        duckdns_hostname=example
+        duckdns_domain=example
         duckdns_token=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 
 Every configuration file in ``/etc/duckdns.d/`` must end in ``.conf``.
