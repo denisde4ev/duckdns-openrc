@@ -7,7 +7,7 @@ _init_system=openrc
 
 #_pkgname=duckdns
 pkgname=duckdns-${_init_system}
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc="Update your DuckDNS.org entries from your computer."
 arch=('any')
@@ -20,7 +20,7 @@ provides=(duckdns)
 # group=(duckdns)
 install="services/$_init_system/duckdns.install"
 
-source=('default.conf' 'duckdns.sh' 'README.rst')
+source=('default.conf' 'duckdns1.2.sh' 'README.rst')
 
 ### DOES NOT WORK!... makepkg, cant have source in nested dir...!
 ## case $_init_system in
@@ -43,7 +43,7 @@ build() {
 }
 
 package() {
-	install -Dm755 "${srcdir}/duckdns.sh" "${pkgdir}/usr/bin/duckdns"
+	install -Dm755 "${srcdir}/duckdns1.2.sh" "${pkgdir}/usr/bin/duckdns"
 	install -dm755 "${pkgdir}/etc/duckdns.d"
 	install -Dm644 "${srcdir}/default.conf" "${pkgdir}/etc/duckdns.d/default.conf"
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-duckdns_onipchane() {
+duckdns_onipchange() {
 	printf %s\\n "Updating DuckDNS entries..."
 
 	for file in ${DUCKDNS_CONFIGDIR-/etc}/duckdns.d/*.conf; do
@@ -51,7 +51,7 @@ while :; do
 			current_ip="${current_ip#*src }"
 			current_ip="${current_ip%% *}"
 
-			duckdns_onipchane "${current_ip}"
+			duckdns_onipchange "${current_ip}"
 		;;
 	esac
 

@@ -25,13 +25,13 @@ getip() {
 }
 
 
-duckdns_onipchane() {
+duckdns_onipchange() {
 	printf %s\\n "I: Detected new IP${1+='${1?}'}. Updating DuckDNS entries..."
 
 
 	#EXITCODE=0
 
-	for file in ${DUCKDNS_CONFIGDIR-/etc}/duckdns.d/*.conf; do
+	for file in "${DUCKDNS_CONFIGDIR-/etc}"/duckdns.d/*.conf; do
 		printf %s\\n "I: Executing config file '${file}'..."
 		## comment for easy copy test.
 		# duckdns_domain=''
@@ -90,7 +90,7 @@ while :; do
 			current_ip="${current_ip#*src }"
 			current_ip="${current_ip%% *}"
 
-			duckdns_onchange "${current_ip}"
+			duckdns_onipchange "${current_ip}"
 		;;
 	esac
 

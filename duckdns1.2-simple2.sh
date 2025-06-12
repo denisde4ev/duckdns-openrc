@@ -1,6 +1,6 @@
 #!/bin/sh
 
-duckdns_onipchane() {
+duckdns_onipchange() {
 	set -- $(printf %s "$1" | sed -nEe 's/.* src ([^ ]*).*/\1/p') # NOTE:! needed only if set by `ip r g 1` command
 	printf %s\\n "Updating DuckDNS entries..."
 
@@ -32,7 +32,7 @@ while :; do
 
 	case "$current" in
 		"$latest") printf %s\\n "ip not changed" ;;
-		*) current=$latest;  duckdns_onchange "${current_ip}";;
+		*) current=$latest;  duckdns_onipchange "${current_ip}";;
 		# you can provide empty argument if you want to set the publick ip that will access duckdns
 	esac
 
