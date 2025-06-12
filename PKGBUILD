@@ -58,7 +58,7 @@ package() {
 		;;
 		openrc)
 			install -Dm755 "${startdir}/services/$_init_system/duckdns.init"    "${pkgdir}/etc/init.d/duckdns"
-			install -Dm755 "${startdir}/services/$_init_system/duckdns.conf"    "${pkgdir}/etc/init.d/duckdns.conf"
+			install -Dm755 "${startdir}/services/$_init_system/duckdns.conf"    "${pkgdir}/etc/conf.d/duckdns"
 		;;
 	esac
 }

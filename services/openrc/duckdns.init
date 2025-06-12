@@ -19,19 +19,25 @@ pidfile="/run/${_name}.pid"
 #command_background="yes"
 
 
+#rc_logger="YES"
+#output_log="/var/log/duckdns.log"
+#error_log="/var/log/duckdns.err"
+
 depend() {
 	need net
 }
 
-start() {
-	ebegin "Starting DuckDNS updater"
-	while :; do
-		# note: env var "$DUCKDNS_CONFIGDIR"
-		"${command}" ${DUCKDNS_OPTS}
-		sleep 900  # 900 seconds = 15 minutes
-	done &
-	eend $?
-}
+
+# not needed, will run sleep in duckdns
+##start() {
+##	ebegin "Starting DuckDNS updater"
+##	while :; do
+##		# note: env var "$DUCKDNS_CONFIGDIR"
+##		"${command}" ${DUCKDNS_OPTS}
+##		sleep 900  # 900 seconds = 15 minutes
+##	done &
+##	eend $?
+##}
 
 
 
