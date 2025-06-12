@@ -50,7 +50,7 @@ duckdns_onipchange() {
 			#EXITCODE=1
 		}
 
-		printf 'curl log: %s\n' ${ccurl_log:+"$curl_log"} # in most cases will have log
+		printf 'curl log: %s\n' ${curl_log:+"$curl_log"} # in most cases will have log
 
 		#case "$curl_log" in
 		#	OK) ;;

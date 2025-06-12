@@ -1,5 +1,4 @@
 #!/sbin/openrc-run
-#!/hint/sh
 
 # Description: OpenRC service to update DuckDNS every 15 minutes.
 
@@ -16,12 +15,12 @@ command="${DUCKDNS_PREFIX-/usr}/bin/duckdns"
 #pidfile="/run/${RC_SVCNAME}.pid"
 pidfile="/run/${_name}.pid"
 #command_user="root"
-#command_background="yes"
 
 
 #rc_logger="YES"
 #output_log="/var/log/duckdns.log"
 #error_log="/var/log/duckdns.err"
+#command_background="yes"
 
 depend() {
 	need net
